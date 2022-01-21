@@ -31,3 +31,5 @@ jobs:
 
       - name: Deploy
         run: gcloud run deploy $APP_ID --image gcr.io/$PROJECT_ID/$APP_ID:$GITHUB_SHA --platform managed --region $RUN_REGION --allow-unauthenticated
+# Initially --allow-unauthenticated didn't work, it kind of ignores the flag.
+# coz after editing at google cloud, it doesn't seem to care about the flag...
